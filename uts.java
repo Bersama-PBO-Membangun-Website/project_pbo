@@ -73,3 +73,28 @@ public class UTS {
         System.out.println("=========================================");
 
         System.out.print("Masukkan jumlah data: ");
+        int n = input.nextInt();
+        input.nextLine();
+
+        Smartphone[] data = new Smartphone[n];
+
+        // INPUT DATA
+        for (int i = 0; i < n; i++) {
+            System.out.println("\nData Smartphone ke-" + (i + 1));
+            System.out.print("Masukkan Merk  : ");
+            String merk = input.nextLine();
+            System.out.print("Masukkan Harga : ");
+            double harga = input.nextDouble();
+            System.out.print("Masukkan RAM   : ");
+            int ram = input.nextInt();
+
+            System.out.print("Apakah Gaming Phone? (y/n): ");
+            char tipe = input.next().charAt(0);
+            input.nextLine();
+
+            if (tipe == 'y' || tipe == 'Y') {
+                System.out.print("Masukkan Refresh Rate: ");
+                int rr = input.nextInt();
+                input.nextLine();
+                data[i] = new SmartphoneGaming(merk, harga, ram, rr);
+            } else {
