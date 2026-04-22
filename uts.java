@@ -48,3 +48,28 @@ class SmartphoneGaming extends Smartphone {
     private int refreshRate;
 
     SmartphoneGaming(String merk, double harga, int ram, int refreshRate) {
+        super(merk, harga, ram);
+        this.refreshRate = refreshRate;
+    }
+
+    @Override
+    public void tampilData() {
+        System.out.println("Merk: " + getMerk() +
+                           ", Harga: " + getHarga() +
+                           ", RAM: " + getRam() + "GB" +
+                           ", Refresh Rate: " + refreshRate + "Hz");
+    }
+}
+
+public class UTS {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("=========================================");
+        System.out.println("TUGAS INDIVIDU: SISTEM INVENTORI INPUT");
+        System.out.println("NAMA : GIGIH JUANG PRANANTA");
+        System.out.println("NIM  : 25051204416");
+        System.out.println("=========================================");
+
+        System.out.print("Masukkan jumlah data: ");
