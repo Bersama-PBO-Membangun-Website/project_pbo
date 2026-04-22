@@ -130,3 +130,39 @@ data[i] = new Smartphone(merk, harga, ram);
 
 
     
+
+    }
+
+        // DELETE LOOP
+        boolean ulangHapus = true;
+        while (ulangHapus) {
+            System.out.print("\nMasukkan merk yang ingin dihapus: ");
+            String hapus = input.nextLine();
+            boolean terhapus = false;
+
+            for (int i = 0; i < data.length; i++) {
+                if (data[i] != null && data[i].getMerk().equalsIgnoreCase(hapus)) {
+                    data[i] = null;
+                    terhapus = true;
+                    System.out.println("Data berhasil dihapus.");
+                    break;
+                }
+            }
+
+            if (!terhapus) {
+                System.out.println("Data tidak ditemukan.");
+            }
+
+            System.out.print("Hapus lagi? (y/n): ");
+            char pilih = input.next().charAt(0);
+            input.nextLine();
+
+if (pilih == 'n' || pilih == 'N') {
+                ulangHapus = false;
+            }
+        }
+
+        input.close();
+        System.out.println("\nProgram selesai.");
+    }
+}
