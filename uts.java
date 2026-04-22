@@ -98,3 +98,35 @@ public class UTS {
                 input.nextLine();
                 data[i] = new SmartphoneGaming(merk, harga, ram, rr);
             } else {
+data[i] = new Smartphone(merk, harga, ram);
+            }
+        }
+
+        // SORTING
+        for (int i = 0; i < data.length - 1; i++) {
+            for (int j = 0; j < data.length - i - 1; j++) {
+                if (data[j].getHarga() > data[j + 1].getHarga()) {
+                    Smartphone temp = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = temp;
+                }
+            }
+        }
+
+        // OUTPUT
+        System.out.println("\n--- DAFTAR STOK (URUT HARGA TERMURAH) ---");
+        for (Smartphone s : data) {
+            if (s != null) {
+                s.tampilData();
+            }
+        }
+
+        // SEARCH LOOP
+        boolean ulangCari = true;
+
+
+
+
+
+
+    
