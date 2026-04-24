@@ -123,14 +123,31 @@ data[i] = new Smartphone(merk, harga, ram);
 
         // SEARCH LOOP
         boolean ulangCari = true;
+        while (ulangCari) {
+            System.out.print("\nMasukkan Merk yang ingin dicari: ");
+            String cari = input.nextLine();
+            boolean ditemukan = false;
 
+            for (Smartphone s : data) {
+                if (s != null && s.getMerk().equalsIgnoreCase(cari)) {
+                    System.out.print("HASIL DITEMUKAN: ");
+                    s.tampilData();
+                    ditemukan = true;
+                    break;
+                }
+            }
 
+            if (!ditemukan) {
+                System.out.println("Data tidak ditemukan.");
+            }
 
+            System.out.print("Cari lagi? (y/n): ");
+            char pilih = input.next().charAt(0);
+            input.nextLine();
 
-
-
-    
-
+            if (pilih == 'n' || pilih == 'N') {
+                ulangCari = false;
+            }
     }
 
         // DELETE LOOP
